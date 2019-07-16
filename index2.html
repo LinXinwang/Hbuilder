@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<style type="text/css">
+			@charset "utf-8";
+			* {
+				margin: 0;
+				padding: 0;
+				z-index: 0;
+			}
+			body {
+				height: 1080px;
+				width: 1920px;
+				overflow: hidden;
+				background-color: rgba(0,0,0,0.5);
+			}
+			#deviceready {
+				position: absolute;
+				height: 1080px;
+				width: 1920px;
+				top: 0;
+				left: 0;
+			}
+			#functionAreaBox{
+				position: absolute;
+			    height: 800px;
+			    width: 1000px;
+			    left: 460px;
+			    top: 200px;
+			}
+			.mybuttons2{
+				display: inline-block;
+				margin-bottom: 10px;
+				width: 410px;
+				height: 80px;
+				line-height: 80px;
+				border-radius: 10px;
+				font-size: 36px;
+				background-color: #00BFFF;
+				text-align: center;
+			}
+			.text{
+			    display: inline-block;
+			    margin-bottom: 10px;
+			    width: 410px;
+			    height: 80px;
+			    line-height: 80px;
+			    border-radius: 10px;
+			    font-size: 36px;
+			    background-color: white;
+			}
+			.btnFocus{
+				background-color: red;
+			}
+		</style>
+		
+		<script>
+			var adjust=function(){
+			    if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+			        var version = parseFloat(RegExp.$1);
+			        if(version>2.3){
+			            var phoneScale = parseInt(window.screen.width)/1920;
+			            document.write('<meta name="viewport" content="width=1920, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +'">');
+			        }else{
+			            document.write('<meta name="viewport" content="width=1920">');
+			        }
+			    }else{
+			        document.write('<meta name="viewport" content="width=1920, user-scalable=no">');
+			    }
+			}
+			adjust();
+		</script>
+	</head>
+
+	<body>
+		<div id="deviceready">
+			<div id="functionAreaBox">
+				<div class="mybuttons2 coocaa_btn" id="startloaclmedia">启动本地媒体</div>
+				<div class="mybuttons2 coocaa_btn" id="startusersetting">启动用户设置</div>
+				<div class="mybuttons2 coocaa_btn" id="startnetsetting">启动网络设置</div>
+				<div class="mybuttons2 coocaa_btn" id="startappstore">启动应用圈</div>
+				<div class="mybuttons2 coocaa_btn" id="getlocation">获取定位信息</div><input class="text" id="locationid" disabled="disabled"/>
+				<div class="mybuttons2 coocaa_btn" id="getusertoken">获取用户token</div><input class="text" id="usertokenid" disabled="disabled"/>
+				<div class="mybuttons2 coocaa_btn" id="getsysteminfo">获取设备信息</div><input class="text" id="systeminfoid" disabled="disabled"/>
+				<div class="mybuttons2 coocaa_btn" id="gethaslogin">用户是否登录</div><input class="text" id="hasloginid" disabled="disabled"/>
+				<div class="mybuttons2 coocaa_btn" id="getuserinfo">获取用户信息</div><input class="text" id="userinfoid" disabled="disabled"/>
+				</input>
+			</input>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/coocaamap-1.0.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+	</body>
+
+</html>

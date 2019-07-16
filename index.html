@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="expires" content="0">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<style type="text/css">
+			@charset "utf-8";
+			* {
+				margin: 0;
+				padding: 0;
+				z-index: 0;
+			}
+			body {
+				height: 1080px;
+				width: 1920px;
+				overflow: hidden;
+			}
+			#deviceready {
+				position: absolute;
+				height: 1080px;
+				width: 1920px;
+				top: 0;
+				left: 0;
+			}
+			#deviceready.show{
+				position: absolute;
+				height: 1080px;
+				width: 1920px;
+				top: 0;
+				left: 0;
+				background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/ccmall/d20180803.png");
+				display: block;
+			}
+			#bg {
+				display: block;
+				position: absolute;
+				top: 0%;
+				left: 0%;
+				width: 100%;
+				height: 100%;
+				background-color: black;
+				z-index: -1;
+				-moz-opacity: 0.7;
+				opacity: 0.70;
+				filter: alpha(opacity=70);
+			}
+			
+			#bgImg {
+				width: 100%;
+				height: 100%;
+			}
+			
+			#bgImg {
+				z-index: 123;
+				overflow: hidden;
+				-webkit-box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+				-moz-box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+				box-shadow: 0 0 80px rgba(0, 0, 0, .6);
+			}
+			#info1 {
+				position: fixed;
+				top: 70.9%;
+				left: 30.3%;
+				font-size: 33px;
+				color: rgb(51, 51, 51);
+			}
+			#info2 {
+				position: fixed;
+				top: 70.9%;
+				left: 61.19%;
+				font-size: 33px;
+				color: #333333;
+			}
+			.walk {
+				background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/ccmall/unfocus.png");
+				position: absolute;
+				top: 925px;
+				left: 994px;
+				height: 63px;
+				line-height: 63px;
+				width: 280px;
+				font-size: 33px;
+				color: white;
+				text-align: center;
+				/*display: none;*/
+			}
+			.goToDown {
+				background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/ccmall/unfocus.png");
+				position: absolute;
+				top: 925px;
+				left: 649px;
+				height: 63px;
+				line-height: 63px;
+				width: 280px;
+				font-size: 33px;
+				color: white;
+				text-align: center;
+				/*display: none;*/
+			}
+			#progress {
+				width: 1920px;
+				color: white;
+				position: absolute;
+				top: 925px;
+				font-size: 20px;
+				margin-left: 500px;
+				display: none;
+			}
+			#under {
+				margin-top: 20px;
+				width: 1000px;
+				height: 10px;
+				background: #a7a7a7;
+				text-align: center;
+			}
+			#up {
+				margin-top: -10px;
+				width: 0px;
+				height: 10px;
+				background: #fff;
+				text-align: center;
+			}
+			.btnFocus {
+				opacity: 1;
+				background: url("http://sky.fs.skysrt.com/statics/webvip/webapp/ccmall/focus.png");
+			}
+		</style>
+		
+		<script>
+			var adjust=function(){
+			    if(/Android (\d+\.\d+)/.test(navigator.userAgent)){
+			        var version = parseFloat(RegExp.$1);
+			        console.log(version +"<<<===================");
+			        if(version>2.3){
+			            var phoneScale = parseInt(window.screen.width)/1920;
+			            console.log(phoneScale +"<<<===================");
+			            document.write('<meta name="viewport" content="width=1920, minimum-scale = '+ phoneScale +', maximum-scale = '+ phoneScale +'">');
+			        }else{
+			            document.write('<meta name="viewport" content="width=1920">');
+			        }
+			    }else{
+			        document.write('<meta name="viewport" content="width=1920, user-scalable=no">');
+			    }
+			}
+			adjust();
+		</script>
+	</head>
+
+	<body>
+		<div id="bg" tabindex="-1"></div>
+		<div id="deviceready">
+			<div id="bgImg">
+				<div id="goToDown" apkname="com.coocaa.mall" class="coocaabtn goToDown">去看看</div>
+				<div id="walk" class="coocaabtn walk">不感兴趣</div>
+				<div id="progress">
+					<span id="hasfinish">正在跳转中，请稍后...</span>
+					<div id="under"></div>
+					<div id="up"></div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/coocaamap-1.0.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">
+			setTimeout("$('#deviceready').attr('class','show')",100);
+		</script>
+	</body>
+
+</html>
